@@ -1,3 +1,8 @@
+if ( ver_hllhc_optics<1.3) {
+  print, text="Fatal error: align_mbh_v2 is only compatible with HL-LHC optics 1.3 and higher.";
+  stop;
+};
+
 align_elem(RREF,EELEM,SSHIFT): macro={
 stest=table(survey,EELEM,s);
 value,stest;
