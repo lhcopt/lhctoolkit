@@ -140,20 +140,53 @@ if (tarmatchcoip>1e-12){exit;};
 if(mylhcbeam==2)
 {
 
+add2expr, var=acbch6.r1b2,  expr=corr_acbch6.r1b2  ;
+add2expr, var=acbcv5.r1b2,  expr=corr_acbcv5.r1b2  ;
+add2expr, var=acbch5.l1b2,  expr=corr_acbch5.l1b2  ;
+add2expr, var=acbcv6.l1b2,  expr=corr_acbcv6.l1b2  ;
+add2expr, var=acbyhs4.l1b2, expr=corr_acbyhs4.l1b2 ;
+add2expr, var=acbyhs4.r1b2, expr=corr_acbyhs4.r1b2 ;
+add2expr, var=acbyvs4.l1b2, expr=corr_acbyvs4.l1b2 ;
+add2expr, var=acbyvs4.r1b2, expr=corr_acbyvs4.r1b2 ;
+add2expr, var=acbyhs5.l2b2, expr=corr_acbyhs5.l2b2 ;
+add2expr, var=acbchs5.r2b2, expr=corr_acbchs5.r2b2 ;
+add2expr, var=acbyvs5.l2b2, expr=corr_acbyvs5.l2b2 ;
+add2expr, var=acbcvs5.r2b2, expr=corr_acbcvs5.r2b2 ;
+add2expr, var=acbyhs4.l2b2, expr=corr_acbyhs4.l2b2 ;
+add2expr, var=acbyhs4.r2b2, expr=corr_acbyhs4.r2b2 ;
+add2expr, var=acbyvs4.l2b2, expr=corr_acbyvs4.l2b2 ;
+add2expr, var=acbyvs4.r2b2, expr=corr_acbyvs4.r2b2 ;
+add2expr, var=acbch6.r5b2,  expr=corr_acbch6.r5b2  ;
+add2expr, var=acbcv5.r5b2,  expr=corr_acbcv5.r5b2  ;
+add2expr, var=acbch5.l5b2,  expr=corr_acbch5.l5b2  ;
+add2expr, var=acbcv6.l5b2,  expr=corr_acbcv6.l5b2  ;
+add2expr, var=acbyhs4.l5b2, expr=corr_acbyhs4.l5b2 ;
+add2expr, var=acbyhs4.r5b2, expr=corr_acbyhs4.r5b2 ;
+add2expr, var=acbyvs4.l5b2, expr=corr_acbyvs4.l5b2 ;
+add2expr, var=acbyvs4.r5b2, expr=corr_acbyvs4.r5b2 ;
+add2expr, var=acbchs5.l8b2, expr=corr_acbchs5.l8b2 ;
+add2expr, var=acbyhs5.r8b2, expr=corr_acbyhs5.r8b2 ;
+add2expr, var=acbcvs5.l8b2, expr=corr_acbcvs5.l8b2 ;
+add2expr, var=acbyvs5.r8b2, expr=corr_acbyvs5.r8b2 ;
+add2expr, var=acbyhs4.l8b2, expr=corr_acbyhs4.l8b2 ;
+add2expr, var=acbyhs4.r8b2, expr=corr_acbyhs4.r8b2 ;
+add2expr, var=acbyvs4.l8b2, expr=corr_acbyvs4.l8b2 ;
+add2expr, var=acbyvs4.r8b2, expr=corr_acbyvs4.r8b2 ;
+
 !!ir1
 match,sequence=lhcb2,range=e.ds.l1.b2/s.ds.r1.b2,betx=100,bety=100,x=0,px=0,y=0,py=0;
 weight,     x = 1, px =  10, y = 1, py = 10;
 constraint,sequence=lhcb2,range=ip1,x=xnom1,y=ynom1,px=pxnom1,py=pynom1;
 constraint,sequence=lhcb2,range=s.ds.r1.b2,x=0.,y=0.,px=0.,py=0.;
 
-vary, name=acbch6.r1b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary, name=acbcv5.r1b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary, name=acbch5.l1b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary, name=acbcv6.l1b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary, name=acbyhs4.l1b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary, name=acbyhs4.r1b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary, name=acbyvs4.l1b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary, name=acbyvs4.r1b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary, name=corr_acbch6.r1b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary, name=corr_acbcv5.r1b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary, name=corr_acbch5.l1b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary, name=corr_acbcv6.l1b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary, name=corr_acbyhs4.l1b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary, name=corr_acbyhs4.r1b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary, name=corr_acbyvs4.l1b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary, name=corr_acbyvs4.r1b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
 
 simplex, calls = 100, tolerance=1.e-30;
 jacobian, calls = 10, tolerance=1.e-30;
@@ -168,14 +201,14 @@ weight,     x = 1, px =  10, y = 1, py = 10;
 constraint,sequence=lhcb2,range=ip2,x=xnom2,y=ynom2,px=pxnom2,py=pynom2;
 constraint,sequence=lhcb2,range=s.ds.r2.b2,x=0.,y=0.,px=0.,py=0.;
 
-vary,   name=acbyhs5.l2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbchs5.r2b2, step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary,   name=acbyvs5.l2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbcvs5.r2b2, step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary,   name=acbyhs4.l2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbyhs4.r2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbyvs4.l2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbyvs4.r2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbyhs5.l2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbchs5.r2b2, step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary,   name=corr_acbyvs5.l2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbcvs5.r2b2, step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary,   name=corr_acbyhs4.l2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbyhs4.r2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbyvs4.l2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbyvs4.r2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
 
 simplex, calls = 100, tolerance=1.e-30;
 jacobian, calls = 10, tolerance=1.e-30;
@@ -190,14 +223,14 @@ weight,     x = 1, px =  10, y = 1, py = 10;
 constraint,sequence=lhcb2,range=ip5,x=xnom5,y=ynom5,px=pxnom5,py=pynom5;
 constraint,sequence=lhcb2,range=s.ds.r5.b2,x=0.,y=0.,px=0.,py=0.;
 
-vary, name=acbch6.r5b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary, name=acbcv5.r5b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary, name=acbch5.l5b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary, name=acbcv6.l5b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary, name=acbyhs4.l5b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary, name=acbyhs4.r5b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary, name=acbyvs4.l5b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary, name=acbyvs4.r5b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary, name=corr_acbch6.r5b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary, name=corr_acbcv5.r5b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary, name=corr_acbch5.l5b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary, name=corr_acbcv6.l5b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary, name=corr_acbyhs4.l5b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary, name=corr_acbyhs4.r5b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary, name=corr_acbyvs4.l5b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary, name=corr_acbyvs4.r5b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
 
 simplex, calls = 100, tolerance=1.e-30;
 jacobian, calls = 10, tolerance=1.e-30;
@@ -212,14 +245,14 @@ weight,     x = 1, px =  10, y = 1, py = 10;
 constraint,sequence=lhcb2,range=ip8,x=xnom8,y=ynom8,px=pxnom8,py=pynom8;
 constraint,sequence=lhcb2,range=s.ds.r8.b2,x=0.,y=0.,px=0.,py=0.;
 
-vary,   name=acbchs5.l8b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary,   name=acbyhs5.r8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbcvs5.l8b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary,   name=acbyvs5.r8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbyhs4.l8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbyhs4.r8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbyvs4.l8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbyvs4.r8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbchs5.l8b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary,   name=corr_acbyhs5.r8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbcvs5.l8b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary,   name=corr_acbyvs5.r8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbyhs4.l8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbyhs4.r8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbyvs4.l8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbyvs4.r8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
 
 simplex, calls = 100, tolerance=1.e-30;
 jacobian, calls = 10, tolerance=1.e-30;
@@ -237,20 +270,53 @@ if (tarmatchcoip>1e-12){exit;};
 if(mylhcbeam==4)
 {
 
+add2expr, var=acbch6.r1b2,  expr=corr_acbch6.r1b2  ;
+add2expr, var=acbcv5.r1b2,  expr=corr_acbcv5.r1b2  ;
+add2expr, var=acbch5.l1b2,  expr=corr_acbch5.l1b2  ;
+add2expr, var=acbcv6.l1b2,  expr=corr_acbcv6.l1b2  ;
+add2expr, var=acbyhs4.l1b2, expr=corr_acbyhs4.l1b2 ;
+add2expr, var=acbyhs4.r1b2, expr=corr_acbyhs4.r1b2 ;
+add2expr, var=acbyvs4.l1b2, expr=corr_acbyvs4.l1b2 ;
+add2expr, var=acbyvs4.r1b2, expr=corr_acbyvs4.r1b2 ;
+add2expr, var=acbyhs5.l2b2, expr=corr_acbyhs5.l2b2 ;
+add2expr, var=acbchs5.r2b2, expr=corr_acbchs5.r2b2 ;
+add2expr, var=acbyvs5.l2b2, expr=corr_acbyvs5.l2b2 ;
+add2expr, var=acbcvs5.r2b2, expr=corr_acbcvs5.r2b2 ;
+add2expr, var=acbyhs4.l2b2, expr=corr_acbyhs4.l2b2 ;
+add2expr, var=acbyhs4.r2b2, expr=corr_acbyhs4.r2b2 ;
+add2expr, var=acbyvs4.l2b2, expr=corr_acbyvs4.l2b2 ;
+add2expr, var=acbyvs4.r2b2, expr=corr_acbyvs4.r2b2 ;
+add2expr, var=acbch6.r5b2,  expr=corr_acbch6.r5b2  ;
+add2expr, var=acbcv5.r5b2,  expr=corr_acbcv5.r5b2  ;
+add2expr, var=acbch5.l5b2,  expr=corr_acbch5.l5b2  ;
+add2expr, var=acbcv6.l5b2,  expr=corr_acbcv6.l5b2  ;
+add2expr, var=acbyhs4.l5b2, expr=corr_acbyhs4.l5b2 ;
+add2expr, var=acbyhs4.r5b2, expr=corr_acbyhs4.r5b2 ;
+add2expr, var=acbyvs4.l5b2, expr=corr_acbyvs4.l5b2 ;
+add2expr, var=acbyvs4.r5b2, expr=corr_acbyvs4.r5b2 ;
+add2expr, var=acbchs5.l8b2, expr=corr_acbchs5.l8b2 ;
+add2expr, var=acbyhs5.r8b2, expr=corr_acbyhs5.r8b2 ;
+add2expr, var=acbcvs5.l8b2, expr=corr_acbcvs5.l8b2 ;
+add2expr, var=acbyvs5.r8b2, expr=corr_acbyvs5.r8b2 ;
+add2expr, var=acbyhs4.l8b2, expr=corr_acbyhs4.l8b2 ;
+add2expr, var=acbyhs4.r8b2, expr=corr_acbyhs4.r8b2 ;
+add2expr, var=acbyvs4.l8b2, expr=corr_acbyvs4.l8b2 ;
+add2expr, var=acbyvs4.r8b2, expr=corr_acbyvs4.r8b2 ;
+
 !!ir1
 match,sequence=lhcb2,range=s.ds.r1.b2/e.ds.l1.b2,betx=100,bety=100,x=0,px=0,y=0,py=0;
 weight,     x = 1, px =  10, y = 1, py = 10;
 constraint,sequence=lhcb2,range=ip1,x=xnom1,y=ynom1,px=pxnom1,py=pynom1;
 constraint,sequence=lhcb2,range=e.ds.l1.b2,x=0.,y=0.,px=0.,py=0.;
 
-vary, name=acbch6.r1b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary, name=acbcv5.r1b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary, name=acbch5.l1b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary, name=acbcv6.l1b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary, name=acbyhs4.l1b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary, name=acbyhs4.r1b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary, name=acbyvs4.l1b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary, name=acbyvs4.r1b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary, name=corr_acbch6.r1b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary, name=corr_acbcv5.r1b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary, name=corr_acbch5.l1b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary, name=corr_acbcv6.l1b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary, name=corr_acbyhs4.l1b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary, name=corr_acbyhs4.r1b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary, name=corr_acbyvs4.l1b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary, name=corr_acbyvs4.r1b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
 
 simplex, calls = 100, tolerance=1.e-30;
 jacobian, calls = 10, tolerance=1.e-30;
@@ -265,14 +331,14 @@ weight,     x = 1, px =  10, y = 1, py = 10;
 constraint,sequence=lhcb2,range=ip2,x=xnom2,y=ynom2,px=pxnom2,py=pynom2;
 constraint,sequence=lhcb2,range=e.ds.l2.b2/,x=0.,y=0.,px=0.,py=0.;
 
-vary,   name=acbyhs5.l2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbchs5.r2b2, step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary,   name=acbyvs5.l2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbcvs5.r2b2, step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary,   name=acbyhs4.l2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbyhs4.r2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbyvs4.l2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbyvs4.r2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbyhs5.l2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbchs5.r2b2, step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary,   name=corr_acbyvs5.l2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbcvs5.r2b2, step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary,   name=corr_acbyhs4.l2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbyhs4.r2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbyvs4.l2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbyvs4.r2b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
 
 simplex, calls = 100, tolerance=1.e-30;
 jacobian, calls = 10, tolerance=1.e-30;
@@ -287,14 +353,14 @@ weight,     x = 1, px =  10, y = 1, py = 10;
 constraint,sequence=lhcb2,range=ip5,x=xnom5,y=ynom5,px=pxnom5,py=pynom5;
 constraint,sequence=lhcb2,range=e.ds.l5.b2,x=0.,y=0.,px=0.,py=0.;
 
-vary, name=acbch6.r5b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary, name=acbcv5.r5b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary, name=acbch5.l5b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary, name=acbcv6.l5b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary, name=acbyhs4.l5b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary, name=acbyhs4.r5b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary, name=acbyvs4.l5b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary, name=acbyvs4.r5b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary, name=corr_acbch6.r5b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary, name=corr_acbcv5.r5b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary, name=corr_acbch5.l5b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary, name=corr_acbcv6.l5b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary, name=corr_acbyhs4.l5b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary, name=corr_acbyhs4.r5b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary, name=corr_acbyvs4.l5b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary, name=corr_acbyvs4.r5b2, step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
 
 simplex, calls = 100, tolerance=1.e-30;
 jacobian, calls = 10, tolerance=1.e-30;
@@ -309,14 +375,14 @@ weight,     x = 1, px =  10, y = 1, py = 10;
 constraint,sequence=lhcb2,range=ip8,x=xnom8,y=ynom8,px=pxnom8,py=pynom8;
 constraint,sequence=lhcb2,range=e.ds.l8.b2,x=0.,y=0.,px=0.,py=0.;
 
-vary,   name=acbchs5.l8b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary,   name=acbyhs5.r8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbcvs5.l8b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
-vary,   name=acbyvs5.r8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbyhs4.l8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbyhs4.r8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbyvs4.l8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
-vary,   name=acbyvs4.r8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbchs5.l8b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary,   name=corr_acbyhs5.r8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbcvs5.l8b2,  step = 0.00001,lower=-limitMCBC,upper=limitMCBC;
+vary,   name=corr_acbyvs5.r8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbyhs4.l8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbyhs4.r8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbyvs4.l8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
+vary,   name=corr_acbyvs4.r8b2,  step = 0.00001,lower=-limitMCBY,upper=limitMCBY;
 
 simplex, calls = 100, tolerance=1.e-30;
 jacobian, calls = 10, tolerance=1.e-30;
